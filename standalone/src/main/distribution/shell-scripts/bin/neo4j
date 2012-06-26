@@ -200,7 +200,7 @@ startit() {
 	if [ $WAIT = "true" ] ; then
 	echo -n "... waiting for server to be ready."
       # While process is still live
-	    while ( [ kill -0 $STARTED_PID 2> /dev/null ] ) ; do
+	    while kill -0 $STARTED_PID 2> /dev/null ; do
 	      ## wait for start, pick up the server listening on the port
 	      detectrunning
 	      if [ $newpid ] ; then
